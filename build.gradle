@@ -36,3 +36,23 @@ tasks.register('verifyModJar') {
     }
 }
 tasks.named('check') { dependsOn tasks.named('verifyModJar') }
+
+// Support files uploaded individually to the repository root.
+sourceSets {
+    main {
+        java {
+            setSrcDirs(['.'])
+            include '*.java'
+        }
+        resources.setSrcDirs([])
+    }
+}
+tasks.named('processResources') {
+    from(project.projectDir) {
+        include 'fabric.mod.json'
+    }
+    from(project.projectDir) {
+        include 'en_us.json', 'ru_ru.json'
+        into 'assets/vortexclient/lang'
+    }
+}
