@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "vortexclient",
+  "version": "${version}",
+  "name": "Vortex Client UI",
+  "description": "Fabric port of the Vortex web UI: ClickGUI + HUD demo. Gameplay modules are visual placeholders.",
+  "authors": [
+    "Vortex project"
+  ],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "dev.vortex.client.VortexClient"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
