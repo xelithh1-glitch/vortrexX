@@ -16,7 +16,7 @@ public final class VortexClient implements ClientModInitializer {
     @Override public void onInitializeClient() {
         var category = KeyMapping.Category.register(Identifier.fromNamespaceAndPath(MOD_ID, "main"));
         var open = KeyBindingHelper.registerKeyBinding(new KeyMapping(
-            "key.vortexclient.open", InputConstants.Type.KEYSYM, InputConstants.KEY_RIGHT_SHIFT, category));
+            "key.vortexclient.open", InputConstants.Type.KEYSYM, org.lwjgl.glfw.GLFW.GLFW_KEY_RIGHT_SHIFT, category));
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
             while (open.consumeClick()) {
                 client.setScreen(new VortexScreen());
@@ -26,3 +26,4 @@ public final class VortexClient implements ClientModInitializer {
             Identifier.fromNamespaceAndPath(MOD_ID, "hud"), (graphics, tracker) -> VortexHud.render(graphics));
     }
 }
+
