@@ -1,0 +1,177 @@
+[
+  {
+    "id": "killaura",
+    "name": "Killaura",
+    "category": "combat"
+  },
+  {
+    "id": "triggerbot",
+    "name": "Triggerbot",
+    "category": "combat"
+  },
+  {
+    "id": "autototem",
+    "name": "AutoTotem",
+    "category": "combat"
+  },
+  {
+    "id": "velocity",
+    "name": "Velocity (Anti-KB)",
+    "category": "combat"
+  },
+  {
+    "id": "criticals",
+    "name": "Criticals",
+    "category": "combat"
+  },
+  {
+    "id": "reach",
+    "name": "Reach",
+    "category": "combat"
+  },
+  {
+    "id": "hitboxes",
+    "name": "Hitboxes",
+    "category": "combat"
+  },
+  {
+    "id": "maceExploit",
+    "name": "Mace Exploit (1.21)",
+    "category": "combat"
+  },
+  {
+    "id": "autoweapon",
+    "name": "AutoWeapon",
+    "category": "combat"
+  },
+  {
+    "id": "bowaim",
+    "name": "BowAim & Predict",
+    "category": "combat"
+  },
+  {
+    "id": "speed",
+    "name": "Speed",
+    "category": "movement"
+  },
+  {
+    "id": "fly",
+    "name": "Fly (Flight)",
+    "category": "movement"
+  },
+  {
+    "id": "jesus",
+    "name": "Jesus (WaterWalk)",
+    "category": "movement"
+  },
+  {
+    "id": "step",
+    "name": "Step",
+    "category": "movement"
+  },
+  {
+    "id": "noslowdown",
+    "name": "NoSlowdown",
+    "category": "movement"
+  },
+  {
+    "id": "spider",
+    "name": "Spider (WallClimb)",
+    "category": "movement"
+  },
+  {
+    "id": "safewalk",
+    "name": "SafeWalk",
+    "category": "movement"
+  },
+  {
+    "id": "elytrafly",
+    "name": "ElytraFly (1.21)",
+    "category": "movement"
+  },
+  {
+    "id": "autosprint",
+    "name": "AutoSprint",
+    "category": "movement"
+  },
+  {
+    "id": "esp",
+    "name": "ESP (Wallhack)",
+    "category": "render"
+  },
+  {
+    "id": "tracers",
+    "name": "Tracers",
+    "category": "render"
+  },
+  {
+    "id": "fullbright",
+    "name": "FullBright",
+    "category": "render"
+  },
+  {
+    "id": "nametags",
+    "name": "Nametags",
+    "category": "render"
+  },
+  {
+    "id": "storageesp",
+    "name": "StorageESP",
+    "category": "render"
+  },
+  {
+    "id": "xray",
+    "name": "X-Ray (1.21 Ores)",
+    "category": "render"
+  },
+  {
+    "id": "targethud",
+    "name": "Target HUD",
+    "category": "render"
+  },
+  {
+    "id": "scaffold",
+    "name": "Scaffold (Bridge)",
+    "category": "player"
+  },
+  {
+    "id": "fastplace",
+    "name": "FastPlace",
+    "category": "player"
+  },
+  {
+    "id": "autoeat",
+    "name": "AutoEat",
+    "category": "player"
+  },
+  {
+    "id": "nofall",
+    "name": "NoFall",
+    "category": "player"
+  },
+  {
+    "id": "cheststealer",
+    "name": "ChestStealer",
+    "category": "player"
+  },
+  {
+    "id": "autoarmor",
+    "name": "AutoArmor & InvManager",
+    "category": "player"
+  },
+  {
+    "id": "timer",
+    "name": "Timer",
+    "category": "world"
+  },
+  {
+    "id": "nuker",
+    "name": "Nuker (FastBreak)",
+    "category": "world"
+  },
+  {
+    "id": "trialsAutoLoot",
+    "name": "Trial AutoLoot (1.21.11)",
+    "category": "world"
+  }
+]

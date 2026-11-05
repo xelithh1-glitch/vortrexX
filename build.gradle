@@ -1,0 +1,38 @@
+plugins { id 'fabric-loom' version "${loom_version}" }
+version = project.mod_version
+group = project.maven_group
+base { archivesName = project.archives_base_name }
+repositories { mavenCentral() }
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+}
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand 'version': project.version } }
+tasks.withType(JavaCompile).configureEach { options.release = 21 }
+java { toolchain.languageVersion = JavaLanguageVersion.of(21); withSourcesJar() }
+
+tasks.register('verifyModJar') {
+    dependsOn tasks.named('remapJar')
+    inputs.file(tasks.named('remapJar').flatMap { it.archiveFile })
+    doLast {
+        def archive = tasks.named('remapJar').get().archiveFile.get().asFile
+        def required = ['fabric.mod.json',
+            'dev/vortex/client/VortexClient.class',
+            'dev/vortex/client/VortexScreen.class',
+            'dev/vortex/client/VortexHud.class',
+            'dev/vortex/client/ModuleStore.class',
+            'assets/vortexclient/lang/en_us.json',
+            'assets/vortexclient/lang/ru_ru.json']
+        new java.util.zip.ZipFile(archive).withCloseable { zip ->
+            required.each { path ->
+                if (zip.getEntry(path) == null) throw new GradleException("Missing ${path} in ${archive.name}")
+            }
+            def metadata = new groovy.json.JsonSlurper().parse(zip.getInputStream(zip.getEntry('fabric.mod.json')))
+            if (metadata.version != project.version.toString()) throw new GradleException('Unexpanded mod version')
+            if (metadata.entrypoints.client != ['dev.vortex.client.VortexClient']) throw new GradleException('Incorrect client entrypoint')
+        }
+    }
+}
+tasks.named('check') { dependsOn tasks.named('verifyModJar') }
